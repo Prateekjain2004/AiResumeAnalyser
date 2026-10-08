@@ -15,12 +15,11 @@ const auth = () => {
 
     const {isLoading,auth}=usePuterStore();
     const location= useLocation();
-    const next=location.search.split('next=')[1];
-    const navigate=useNavigate();
 
-    useEffect(()=>{
-        if(auth.isAuthenticated) navigate(next);
-    },[auth.isAuthenticated,next])
+    const navigate=useNavigate();
+    useEffect(() => {
+        if(auth.isAuthenticated) navigate('/');
+    }, [auth.isAuthenticated])
 
     return (
        <main className="bg-[url('/./public/images/bg-auth.svg)]

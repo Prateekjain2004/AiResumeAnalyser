@@ -20,7 +20,9 @@ export default function Home() {
   // useEffect(()=>{
   //   if(auth.isAuthenticated) navigate('/auth?next=/');
   // },[auth.isAuthenticated])
-
+  useEffect(() => {
+    if(!auth.isAuthenticated) navigate('/auth?next=/');
+  }, [auth.isAuthenticated])
 
   useEffect(()=>{
     const loadResumes=async()=>{
@@ -80,7 +82,7 @@ export default function Home() {
 
       {!loadingResumes && resumes.length===0 && (
           <div className="flex flex-col items-center justify-center mt-10 gap-4">
-            <Link to="upload" className="primarybutton w-fit text-xl font-semibold" >
+            <Link to="upload" className="primary-button w-fit text-xl font-semibold" >
               Upload Resume
             </Link>
           </div>

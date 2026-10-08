@@ -40,7 +40,7 @@ const Resume = () => {
             setImageUrl(imageUrl);
 
             setFeedback(data.feedback);
-            console.log(resumeUrl,imageUrl,data.feedback);
+
         };
         loadResume();
     },[id]);
