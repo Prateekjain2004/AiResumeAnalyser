@@ -3,7 +3,7 @@ import {twMerge} from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
-}
+} //tailwind class
 
 export function formatSize(bytes: number): string {
     if (bytes === 0) return '0 Bytes';
